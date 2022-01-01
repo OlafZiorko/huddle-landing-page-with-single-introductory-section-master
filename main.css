@@ -1,0 +1,184 @@
+:root {
+  /* COLOR PALLET */
+
+  --clr-violet: hsl(257, 40%, 49%);
+  --clr-pink: hsl(300, 69%, 71%);
+  --clr-white: hsl(0, 0%, 100%);
+
+  /*FONTS FOR HEADINGS AND WEIGHTS */
+  --fn-fm-heading: "Poppins", sans-serif;
+  --fnt-wght-h400: 400;
+  --fnt-wght-h600: 600;
+  /*FONTS FOR BODY AND WEIGHTS */
+  --fn-fm-body: "Open Sans", sans-serif;
+  --fnt-wght-b400: 400;
+}
+*,
+*::backdrop,
+*::after {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+html {
+  line-height: 1.15;
+  -webkit-text-size-adjust: 100%;
+  font-family: var(--fnt-fm);
+}
+body {
+  background-color: var(--clr-violet);
+  font-family: var(--fn-fm-body);
+  font-size: 62.5%;
+  height: 100vh;
+}
+.page__wrapper {
+  background-color: var(--clr-violet);
+  height: 100vh;
+  margin: 0 auto;
+  max-width: 560px;
+}
+/* HEADER SECTION */
+.page__header {
+  background-image: url(./images/bg-mobile.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 2rem 2rem;
+}
+.page__title--img {
+  width: 8rem;
+  margin-bottom: 3.4rem;
+}
+.hero {
+  width: 100%;
+}
+/* MAIN SECTION */
+main {
+  text-align: center;
+  padding: 1.7rem;
+}
+.main--title {
+  color: var(--clr-white);
+  font-size: 1.45rem;
+  font-family: var(--fn-fm-heading);
+  font-weight: var(--fnt-wght-h600);
+  line-height: 1.55;
+  padding: 0 0.3rem;
+  margin-bottom: 1rem;
+}
+.main--description {
+  color: var(--clr-white);
+  font-size: 0.97rem;
+  font-weight: var(--fnt-wght-b400);
+  line-height: 1.55;
+  padding: 0 0.7rem;
+  margin-bottom: 1.4rem;
+}
+.btn {
+  border: none;
+  border-radius: 2rem 2rem;
+  color: var(--clr-violet);
+  font-size: 0.83rem;
+  font-family: var(--fn-fm-heading);
+  font-weight: var(--fnt-wght-h400);
+  outline: none;
+  padding: 0.65rem 0;
+  margin-bottom: 2rem;
+  -webkit-box-shadow: -1px 6px 35px -13px rgba(77, 51, 142, 1);
+  -moz-box-shadow: -1px 6px 35px -13px rgba(77, 51, 142, 1);
+  box-shadow: -1px 6px 35px -13px rgb(49, 27, 105);
+  width: 60%;
+}
+
+.btn:hover,
+.btn:focus {
+  background-color: var(--clr-pink);
+  cursor: pointer;
+  color: var(--clr-white);
+}
+/* FOOTER SECTION */
+.page__footer {
+  text-align: center;
+}
+.footer__list {
+  display: flex;
+  justify-content: center;
+}
+.footer__list .list--item {
+  padding: 0.3rem;
+}
+.footer__list .list--item img {
+  width: 1.8rem;
+}
+/*
+<div>Icons made by <a href="https://www.flaticon.com/authors/stockio" title="Stockio">Stockio</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+<div>Icons made by <a href="https://www.flaticon.com/authors/stockio" title="Stockio">Stockio</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+<div>Icons made by <a href="https://www.flaticon.com/authors/stockio" title="Stockio">Stockio</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+*/
+@media screen and (min-width: 1440px) {
+  .page__wrapper {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+    grid-template-areas:
+      "header main"
+      "header footer";
+
+    max-width: 1440px;
+    margin: 0 auto;
+  }
+  /* HEADER SECTION */
+  .page__header {
+    padding: 3.5rem 2rem;
+    background-image: none;
+    grid-area: header;
+    position: relative;
+  }
+  .page__title--img {
+    width: 14rem;
+    margin-bottom: 4.875rem;
+  }
+  .hero {
+    width: 45rem;
+    height: 32rem;
+  }
+  /* MAIN SECTION */
+  main {
+    align-self: end;
+    text-align: left;
+    grid-area: main;
+    padding-top: 2.5rem;
+  }
+  .main--title {
+    font-size: 2.45rem;
+    margin-bottom: 1.5rem;
+  }
+  .main--description {
+    font-size: 1.1rem;
+    padding: 0 0.7rem;
+    margin-bottom: 1.4rem;
+  }
+  .btn {
+    font-size: 1.2rem;
+    padding: 0.85rem 0;
+    margin-bottom: 0;
+    margin-left: 0.8rem;
+    width: 35%;
+  }
+  /* FOOTER SECTION */
+  .page__footer {
+    align-self: center;
+    justify-self: end;
+    grid-area: footer;
+    margin-right: 2rem;
+  }
+  .footer__list {
+  }
+  .footer__list .list--item {
+    padding: 0.5rem;
+  }
+  .footer__list .list--item img {
+    width: 2.5rem;
+  }
+}
